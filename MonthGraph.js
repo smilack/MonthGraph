@@ -70,33 +70,6 @@ MonthGraph.prototype = {
       return { "weeks": weeks, "days": days };
    },
 
-/*** potentially obsolete with addition of _{first, last}{InGrid, OfMonth} fields
- *
- *   _calculateDayPositions: function MonthGraph$_calculateDayPositions() {
- *      //rows: weeks
- *      //cols: days of week
- *      this._dayGrid = MonthGraph._CreateDayGrid();
- *
- *      var dateCounter = new Date(this._firstOfMonth);
- *
- *      if(dateCounter.getDay() == 0) {
- *         var week = 1; //display a full week of the previous month if the first of this month is a Sunday
- *      } else {
- *         var week = 0;
- *      }
- *
- *      var day = dateCounter.getDay();
- *
- *      for(; dateCounter.getMonth() == this._month; dateCounter.setDate(dateCounter.getDate() + 1), day = (day + 1) % 7) {
- *         this._dayGrid[week][day] = 1;
- *
- *         if(day == 6) {
- *            week++;
- *         }
- *      }
- *   },
- */
-
    _createGraphElements: function MonthGraph$_createGraphElements() {
       this._rootNode = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
