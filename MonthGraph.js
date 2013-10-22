@@ -73,6 +73,7 @@ MonthGraph.prototype = {
    _createGraphElements: function MonthGraph$_createGraphElements() {
       this._rootNode = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
+      this._rootNode.classList.add('month-graph');
       this._rootNode.setAttribute('width', '135');
       this._rootNode.setAttribute('height', '115');
 
@@ -87,6 +88,7 @@ MonthGraph.prototype = {
          for(var j = 0; j < 6; j++) {
             dayCells[j] = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
 
+            dayCells[j].classList.add('day');
             dayCells[j].setAttribute('width', '15');
             dayCells[j].setAttribute('height', '15');
 
@@ -94,10 +96,12 @@ MonthGraph.prototype = {
             dayCells[j].setAttribute('y', 20 * j);
 
             if(this.dateInMonth(this._gridToDate(j, i))) {
-               dayCells[j].setAttribute('fill', '#aaa');
-            } else {
-               dayCells[j].setAttribute('fill', '#eee');
+                 dayCells[j].classList.add('in-month');
             }
+//               dayCells[j].setAttribute('fill', '#aaa');
+//            } else {
+//               dayCells[j].setAttribute('fill', '#eee');
+//            }
 
             dayCells[j].addEventListener('mouseover', MonthGraph._Events.CellHover);
             dayCells[j].addEventListener('mouseout', MonthGraph._Events.CellUnHover);

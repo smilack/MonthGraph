@@ -1,0 +1,21 @@
+.month-graph {
+  width: 135px;
+  height: 115px;
+}
+
+.week { }
+
+.day {
+  width: 15px;
+  height: 15px;
+
+  fill: #eee;
+}
+
+.first-of-month { }
+
+.in-month {
+  fill: #aaa;
+}
+
+.last-of-month { }
