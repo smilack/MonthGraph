@@ -3,8 +3,14 @@
  <head>
   <title></title>
   <link rel="stylesheet" href="MonthGraph.css">
-  <script src="MonthGraph.js"> </script>
-  <script></script>
+  <script src="MonthGraph.js"></script>
+  <script>
+   var graph;
+   document.addEventListener('DOMContentLoaded', function() {
+      graph = new MonthGraph();
+      document.querySelector('body').appendChild(graph.getRootNode());
+   });
+  </script>
  </head>
  <body>
   
